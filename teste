@@ -1,0 +1,352 @@
+Perfume Elegante: Frasco de perfume com design minimalista e sofisticado, com linhas geométricas em tons de dourado e prata, e um spray delicado no topo. O frasco pode ter um formato arredondado e elegante, com detalhes sutis que transmitam luxo e exclusividade.
+
+Creme Facial Rejuvenescedor: Embalagem de creme com um pote de vidro fosco e tampa metálica prateada. O rótulo pode ser simples, mas com um toque moderno e elegante, utilizando uma paleta de cores sóbrias como preto, branco e toques de dourado. A textura do creme poderia ser visível como uma camada suave e sedosa.
+
+Maquiagem de Olhos – Paleta de Sombras: Caixa moderna e compacta com várias tonalidades de sombras sofisticadas, desde tons neutros até cores vibrantes. O design pode ser futurista, com acabamentos brilhantes e uma superfície de vidro ou acrílico, mostrando o interior das sombras. O estilo da embalagem pode ser clean, com bordas metálicas.
+
+Máscara de Cílios Luxuosa: Tubo de máscara de cílios com um design de vidro escuro, e detalhes dourados. O aplicador pode ter um formato exclusivo, e a embalagem deve passar a ideia de alta performance e sofisticação.
+
+Kit de Cuidados com a Pele – Máscaras Faciais: Uma caixa sofisticada com várias máscaras faciais, cada uma em uma embalagem de papel metálico ou acetato transparente, com cores suaves como nude, rosa claro e branco. A embalagem externa pode ter um design minimalista, mas luxuoso, com tipografia moderna.
+
+Esses são apenas alguns exemplos, mas posso gerar imagens fictícias para esses produtos com descrições detalhadas. Se você gostar de alguma dessas ideias, me avise para eu gerar as imagens!
+
+
+
+
+
+
+
+Você disse:
+pode ser
+O ChatGPT disse:
+ChatGPT
+
+index <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Beleza Futurista</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Beleza do Futuro</h1>
+            <nav>
+                <ul>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-text">
+                <h2>Descubra a Beleza do Amanhã</h2>
+                <p>Produtos inovadores para destacar sua essência.</p>
+                <a href="#produtos" class="btn">Ver Produtos</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/600x400" alt="Beleza Futurista">
+            </div>
+        </section>
+
+        <section id="produtos">
+            <h2>Produtos em Destaque</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300" alt="Produto 1">
+                    <h3>Batom Holográfico</h3>
+                    <p>Um toque de brilho para o futuro.</p>
+                    <button class="btn">Comprar Agora</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300" alt="Produto 2">
+                    <h3>Base Luminescente</h3>
+                    <p>Cobertura impecável com um toque moderno.</p>
+                    <button class="btn">Comprar Agora</button>
+                </div>
+                <!-- Adicionando o perfume -->
+                <div class="product-card">
+                    <img src="perfeito perfume.jpg" alt="Perfume Elegante" class="produto-imagem">
+                    <h3>Perfume Elegante</h3>
+                    <p>Um perfume sofisticado para momentos inesquecíveis.</p>
+                    <button class="btn">Comprar Agora</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Somos apaixonados pela inovação e pela beleza. Criamos produtos que combinam tecnologia e cuidado com
+                você.</p>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Envie-nos uma mensagem:</p>
+            <button class="btn">Fale Conosco</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Beleza do Futuro. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+js 
+// Detectar quando a seção entra na tela
+function checkScroll() {
+    const sections = document.querySelectorAll('.section');
+    const windowHeight = window.innerHeight;
+
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop < windowHeight - 100) {
+            section.classList.add('visible');
+        } else {
+            section.classList.remove('visible');
+        }
+    });
+}
+
+// Chama a função no carregamento da página e no evento de rolagem
+window.addEventListener('load', checkScroll);
+window.addEventListener('scroll', checkScroll);
+
+// Aplique a classe 'section' nas seções do HTML para animação
+document.querySelectorAll('#produtos, #sobre, #contato').forEach(section => {
+    section.classList.add('section');
+});
+
+// Mostrar o pop-up de produto
+document.querySelectorAll('.product-card .btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const productDescription = button.previousElementSibling.textContent; // Pega a descrição do produto
+        document.getElementById('popup-description').textContent = productDescription; // Atualiza a descrição no pop-up
+        document.getElementById('product-popup').style.display = 'flex'; // Exibe o pop-up
+    });
+});
+
+// Fechar o pop-up
+document.getElementById('close-popup').addEventListener('click', () => {
+    document.getElementById('product-popup').style.display = 'none'; // Esconde o pop-up
+});
+css
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte e cores base */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e2f;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, #ff007f, #ff4fa6);
+    padding: 20px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Seção Hero */
+#hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-text .btn {
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #ff007f, #ff4fa6);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.hero-image img {
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Seções */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Produtos */
+.product-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.product-card {
+    background: #29293d;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 45%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.product-card img:hover {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.product-card .btn {
+    background: linear-gradient(45deg, #ff007f, #ff4fa6);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Pop-up */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #29293d;
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.popup-content h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+#close-popup {
+    background: #ff007f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#close-popup:hover {
+    background: #ff4fa6;
+}
+
+/* Rodapé */
+footer {
+    background: #1e1e2f;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
